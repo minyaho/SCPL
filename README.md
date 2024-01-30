@@ -2,8 +2,7 @@
 
 Supervised Contrastive Parallel Learning (SCPL) is a novel approach that decouples BP by multiple local training objectives and supervised contrastive learning. It transforms the original deep network's long gradient flow into multiple short gradient flows and trains the parameters in different layers independently through a pipelined design. This method achieves faster training speed than BP by addressing the inefficiency caused by backward locking in backpropagation. 
 
-This repo is the parallelized version of SCPL, the original version repo is at https://github.com/ChengKai-Wang/Supervised-Contrastive-Parallel-Learning
-
+This repo is the parallelized version of SCPL, the original version repo is at https://github.com/ANONYMOUS/Supervised-Contrastive-Parallel-Learning
 
 ## Environment
 | Name | Version | Note |
@@ -47,13 +46,13 @@ Additionally, you can simulate the experiment using Docker with the following st
 # Install Env
 $ docker pull nvidia/cuda:11.4.1-cudnn8-devel-ubuntu20.04
 $ docker run --gpus all --name scpl_env -it -p 19000:8888 --shm-size="10g" nvidia/cuda:11.4.1-cudnn8-devel-ubuntu20.04
-$ # If "nvidia/cuda:11.4.1-cudnn8-devel-ubuntu20.04" is not available, use "minyaho/cuda:11.4.1-cudnn8-devel-ubuntu20.04"
+$ # If "nvidia/cuda:11.4.1-cudnn8-devel-ubuntu20.04" is not available, use "ANONYMOUS/cuda:11.4.1-cudnn8-devel-ubuntu20.04"
 $ apt-get update -y 
 $ apt-get upgrade -y
 $ apt-get install git wget -y
 $ wget --quiet https://repo.anaconda.com/archive/Anaconda3-2022.05-Linux-x86_64.sh -O ~/anaconda.sh && /bin/bash ~/anaconda.sh -b && rm ~/anaconda.sh && source /root/anaconda3/bin/activate && conda init
 $ conda create --name scpl python=3.8.12 -y && conda activate scpl
-$ cd ~ && git clone https://github.com/minyaho/scpl.git
+$ cd ~ && git clone https://github.com/ANONYMOUS/scpl.git
 $ cd ~/scpl/
 $ pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu113
 $ pip install -r requirements.txt
@@ -75,13 +74,13 @@ We also have provided an alternative list of environments which we have tried as
 # Install Env
 $ docker pull nvidia/cuda:12.0.1-cudnn8-devel-ubuntu20.04
 $ docker run --gpus all --name scpl_env -it -p 19000:8888 --shm-size="10g" nvidia/cuda:12.0.1-cudnn8-devel-ubuntu20.04
-$ # If "nvidia/cuda:12.0.1-cudnn8-devel-ubuntu20.04" is not available, use "minyaho/cuda:12.0.1-cudnn8-devel-ubuntu20.04"
+$ # If "nvidia/cuda:12.0.1-cudnn8-devel-ubuntu20.04" is not available, use "ANONYMOUS/cuda:12.0.1-cudnn8-devel-ubuntu20.04"
 $ apt-get update -y 
 $ apt-get upgrade -y
 $ apt-get install git wget -y
 $ wget --quiet https://repo.anaconda.com/archive/Anaconda3-2022.05-Linux-x86_64.sh -O ~/anaconda.sh && /bin/bash ~/anaconda.sh -b && rm ~/anaconda.sh && source /root/anaconda3/bin/activate && conda init
 $ conda create --name scpl python=3.8.12 -y && conda activate scpl
-$ cd ~ && git clone https://github.com/minyaho/scpl.git
+$ cd ~ && git clone https://github.com/ANONYMOUS/scpl.git
 $ cd ~/scpl/
 $ pip install torch==2.0.1+cu118 torchvision==0.15.2+cu118 torchaudio==2.0.2+cu118 --index-url https://download.pytorch.org/whl/cu118
 $ pip install -r requirements.txt
@@ -103,9 +102,9 @@ If you don't want to create the environment yourself, you can also directly get 
 
 ```bash
 # Install Env
-$ docker pull minyaho/scpl:c1141p1121
-$ docker run --gpus all --name scpl_env -it -p 19000:8888 --shm-size="10g" minyaho/scpl:c1141p1121
-$ cd ~ && git clone https://github.com/minyaho/SCPL.git
+$ docker pull ANONYMOUS/scpl:c1141p1121
+$ docker run --gpus all --name scpl_env -it -p 19000:8888 --shm-size="10g" ANONYMOUS/scpl:c1141p1121
+$ cd ~ && git clone https://github.com/ANONYMOUS/SCPL.git
 $ exit
 $ docker stop scpl_env
 
@@ -120,9 +119,9 @@ $ # jupyter notebook --port=8888 --no-browser --ip=0.0.0.0 --allow-root --Notebo
 - CUDA `12.0.1` and Pytorch `2.0.1+cu118`
 ```bash
 # Install Env
-$ docker pull minyaho/scpl:c1201p201
-$ docker run --gpus all --name scpl_env -it -p 19000:8888 --shm-size="10g" minyaho/scpl:c1201p201
-$ cd ~ && git clone https://github.com/minyaho/SCPL.git
+$ docker pull ANONYMOUS/scpl:c1201p201
+$ docker run --gpus all --name scpl_env -it -p 19000:8888 --shm-size="10g" ANONYMOUS/scpl:c1201p201
+$ cd ~ && git clone https://github.com/ANONYMOUS/SCPL.git
 $ exit
 $ docker stop scpl_env
 
@@ -137,12 +136,12 @@ $ # jupyter notebook --port=8888 --no-browser --ip=0.0.0.0 --allow-root --Notebo
 ### Download Datasets
 
 #### Vision
-* Tiny-imagenet-200:  Download [here](https://drive.google.com/file/d/10wl7UjC47xuUZG5zdUwSwHP1tlV-Ubf7/view?usp=share_link). This zip file contains the tinyImageNet dataset processed in the PyTorch ImageFolder format.
+* Tiny-imagenet-200:  Download [here](https://drive.usercontent.google.com/download?id=10wl7UjC47xuUZG5zdUwSwHP1tlV-Ubf7&export=download). This zip file contains the tinyImageNet dataset processed in the PyTorch ImageFolder format.
   > Unzip the file using the command  `unzip tiny-imagenet-200.zip`.
   > Place the unzipped folder (`./tiny-imagenet-200`) in the root of your project.
 
 #### NLP
-* IMDB: Please download the dataset from [here](https://drive.google.com/file/d/1Z2iqiPKF5wYCgXR-Tc9ZnQqUFVkJvypA/view?usp=share_link).
+* IMDB: Please download the dataset from [here](https://drive.usercontent.google.com/download?id=1Z2iqiPKF5wYCgXR-Tc9ZnQqUFVkJvypA&export=download).
   
   > Put this file (`IMDB_Dataset.csv`) in the root of your project.
 
